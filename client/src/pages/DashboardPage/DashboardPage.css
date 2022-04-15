@@ -1,0 +1,101 @@
+.dashboardWrapper {
+    height: 100vh;
+    position: relative;
+    background-color: #212121;
+    padding: 80px 0 20px;
+}
+.dashboardBtnWrapper {
+
+}
+.dashboardBtn {
+    padding: 16px 0;
+    text-transform: uppercase;
+    text-align: center;
+    color: white;
+    font-size: 28px;
+    line-height: 33px;
+    border-radius: 10px;
+    background-color: #60BB64;
+    cursor: pointer;
+    transition: .5s ease-in-out;
+}
+.dashboardBtn:hover {
+    background-color: #3B8B3F;
+}
+.dashboardBtn:nth-child(2) {
+    margin-top: 20px;
+    background-color: #FD442A;
+}
+.dashboardBtn:nth-child(2):hover {
+    background-color: #C81800;
+}
+.tableWrapper {
+    margin-top: 86px;
+    max-height: 360px;
+    overflow-y: scroll;
+}
+.tableWrapper::-webkit-scrollbar {
+    width: 4px;
+}
+.tableWrapper::-webkit-scrollbar-track {
+    border-radius: 5px;
+    box-shadow: inset 0 0 10px rgba(196, 196, 196, 1);
+}
+.tableWrapper::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    background-color: white;
+}
+.dashboardTable {
+    width: 100%;
+    border-collapse: collapse;
+}
+.dashboardTableTitles {
+
+}
+.dashboardTableTitle {
+    color: white;
+    text-transform: uppercase;
+    font-size: 28px;
+    line-height: 33px;
+    padding-bottom: 17px;
+}
+.dashboardTableTitle:nth-child(1) {
+    text-align: left;
+}
+.dashboardTableTitle:nth-child(4) {
+    text-align: right;
+    padding-right: 10px;
+}
+.dashboardTableRowWrapper {
+    font-weight: 300;
+    font-size: 24px;
+    line-height: 28px;
+    color: #60BB64;
+    border-bottom: 1px solid #FFFFFF;
+    transition: .5s ease-in-out;
+}
+.dashboardTableRowWrapper:hover {
+    background-color: #353535;
+}
+.dashboardTableRowWrapperRed {
+    font-weight: 300;
+    font-size: 24px;
+    line-height: 28px;
+    border-bottom: 1px solid #FFFFFF;
+    transition: .5s ease-in-out;
+    color: #FD442A;
+}
+.dashboardTableRowWrapperRed:hover {
+    background-color: #353535;
+}
+.dashboardTableRow {
+    text-align: center;
+    padding: 17px 0;
+}
+.dashboardTableRow:nth-child(1) {
+    text-align: left;
+}
+.dashboardTableRow:nth-child(4) {
+    text-align: right;
+    padding-right: 10px;
+}

@@ -1,0 +1,38 @@
+.authInput {
+    color: black;
+    font-size: inherit;
+    font-family: inherit;
+    background-color: transparent;
+    border: 1px solid transparent;
+    border-bottom-color: white;
+    margin-top: 5px;
+    padding-bottom: 5px;
+    font-size: 22px;
+}
+.authInput::-webkit-outer-spin-button,
+.authInput::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+.authInput:focus {
+    outline: none;
+}
+.authInput::placeholder {
+    color: hsla(0, 0%, 100%, 0.6);
+}
+.authInputLabel {
+    display: flex;
+    flex-flow: column;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 22px;
+    color: white;
+}
+.authInput:-webkit-autofill,
+.authInput:-webkit-autofill:hover,
+.authInput:-webkit-autofill:focus,
+.authInput:-webkit-autofill:active{
+    -webkit-box-shadow: 0 0 0 30px #FFA733 inset !important;
+    outline: 0 !important;
+}
