@@ -1,10 +1,11 @@
 import React, {useContext, useState} from 'react';
 import {DASHBOARD_ROUTE, HOMEPAGE_ROUTE, LOGIN_ROUTE, REGISTRATION_ROUTE} from "../../utils/consts";
 import {NavLink, useLocation, useHistory} from "react-router-dom";
-import './AuthPage.css';
 import {login, registration} from "../../http/userAPI";
 import {observer} from "mobx-react-lite";
 import {Context} from "../../index";
+
+import styles from './AuthPage.css';
 
 const AuthPage = observer(() => {
     const {user} = useContext(Context)
@@ -33,13 +34,13 @@ const AuthPage = observer(() => {
     }
 
     return (
-        <div className={"authWrapper"}>
-            <div className={"authModalWrapper"}>
-                <form className={"authModalForm"} onSubmit={click}>
-                    <div className={"inputWrapper"}>
-                        <label className={"authInputLabel"}>Email
+        <div className={styles.authWrapper}>
+            <div className={styles.authModalWrapper}>
+                <form className={styles.authModalForm} onSubmit={click}>
+                    <div className={styles.inputWrapper}>
+                        <label className={styles.authInputLabel}>Email
                         <input
-                            className={"authInput"}
+                            className={styles.authInput}
                             type={"email"}
                             autoComplete={"off"}
                             placeholder={"abc@gmail.com"}
@@ -48,10 +49,10 @@ const AuthPage = observer(() => {
                         />
                         </label>
                     </div>
-                    <div className={"inputWrapper"}>
-                        <label className={"authInputLabel"}>Password
+                    <div className={styles.inputWrapper}>
+                        <label className={styles.authInputLabel}>Password
                         <input
-                            className={"authInput"}
+                            className={styles.authInput}
                             type={"password"}
                             value={password}
                             onChange={e => setPassword(e.target.value)}
@@ -59,12 +60,12 @@ const AuthPage = observer(() => {
                         </label>
                     </div>
                     {isLogin ?
-                        <NavLink className={"authRegistrationLink"} to={REGISTRATION_ROUTE}>Registration</NavLink> :
-                        <NavLink className={"authRegistrationLink"} to={LOGIN_ROUTE}>Log in</NavLink>
+                        <NavLink className={styles.authRegistrationLink} to={REGISTRATION_ROUTE}>Registration</NavLink> :
+                        <NavLink className={styles.authRegistrationLink} to={LOGIN_ROUTE}>Log in</NavLink>
                     }
 
                     <button
-                        className={"authBtn"}
+                        className={styles.authBtn}
                         type={"submit"}
                     >
                         {isLogin ? 'Log In' : 'Registration'}

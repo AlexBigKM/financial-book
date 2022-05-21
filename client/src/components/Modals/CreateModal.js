@@ -5,7 +5,7 @@ import classNames from "classnames";
 import close from "../../assets/img/close.png";
 import InputBlock from "../Input/InputBlock";
 
-import './CreateModal.css';
+import styles from './CreateModal.css';
 import {createRow} from "../../http/rowsApi";
 
 
@@ -39,18 +39,18 @@ const CreateModal = observer(() => {
         const selectedType = e.target.value;
         setType(selectedType);
     }
+    console.log(modalsStore.modal)
 
     return (
-        <div className={classNames({
-            "modal": true,
-            "showModal": modalsStore.modal === true,
-            "hideModal": modalsStore.modal === false
+        <div className={classNames(styles.modal, {
+            // [styles.showModal]: modalsStore.modal === true,
+            // [styles.hideModal]: modalsStore.modal === false
         })}
         >
-            <div className={"modalWrapper"}>
-                <img className={"modalCloseImg"} src={close} alt={"close"} onClick={resetHandler} />
-                <div className={"modalInputWrapper"}>
-                    <select className={"modalSelect"}
+            <div className={styles.modalWrapper}>
+                <img className={styles.modalCloseImg} src={close} alt={"close"} onClick={resetHandler} />
+                <div className={styles.modalInputWrapper}>
+                    <select className={styles.modalSelect}
                         value={type}
                         onChange={selectHandler}
                     >
@@ -77,7 +77,7 @@ const CreateModal = observer(() => {
                         value={number}
                         onChange={e => setNumber(e.target.value)}
                     />
-                    <button className={"modalBtn"} onClick={addRows} >Accept</button>
+                    <button className={styles.modalBtn} onClick={addRows} >Accept</button>
                 </div>
             </div>
         </div>

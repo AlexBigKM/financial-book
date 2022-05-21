@@ -6,29 +6,29 @@ import budget from "../../assets/img/budget.png";
 import money from "../../assets/img/money.png";
 import pieChart from "../../assets/img/pie-chart.png";
 
-import './HomePage.css';
+import styles from './HomePage.css';
 
 const HomePage = () => {
     return (
         <>
-        <div className={"homeBackground"}>
-            <div className={"homeLineWrapper"}>
-                <div className={"homeLine"} />
-                <div className={"homeLine"} />
+        <div className={styles.homeBackground}>
+            <div className={styles.homeLineWrapper}>
+                <div className={styles.homeLine} />
+                <div className={styles.homeLine} />
             </div>
-            <ContentContainer containerClassName={"homeContainer"}>
-                <div className="homeCircle">
-                    <img className="homeBarChart" src={barChart} alt={"image"}/>
+            <ContentContainer containerClassName={styles.homeContainer}>
+                <div className={styles.homeCircle}>
+                    <img className={styles.homeBarChart} src={barChart} alt={"image"}/>
                 </div>
-                <div className="homeCircle">
-                    <img className="homeBook" src={book} alt={"image"}/>
-                    <img className="homeMoney" src={money} alt={"image"}/>
+                <div className={styles.homeCircle}>
+                    <img className={styles.homeBook} src={book} alt={"image"}/>
+                    <img className={styles.homeMoney} src={money} alt={"image"}/>
                 </div>
-                <div className="homeCircle">
-                    <img className="homeBudget" src={budget} alt={"image"}/>
-                    <img className="homePieChart" src={pieChart} alt={"image"}/>
+                <div className={styles.homeCircle}>
+                    <img className={styles.homeBudget} src={budget} alt={"image"}/>
+                    <img className={styles.homePieChart} src={pieChart} alt={"image"}/>
                 </div>
-                <div className={"homeMainTitle"}>
+                <div className={styles.homeMainTitle}>
                     Your financial book
                 </div>
             </ContentContainer>

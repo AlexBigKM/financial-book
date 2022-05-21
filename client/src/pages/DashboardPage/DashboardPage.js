@@ -2,8 +2,9 @@ import React, {useContext, useEffect} from 'react';
 import ContentContainer from "../../components/ContentContainer/ContentContainer";
 import {observer} from "mobx-react-lite";
 import {Context} from "../../index";
-import './DashboardPage.css';
+import styles from './DashboardPage.css';
 import {fetchRow} from "../../http/rowsApi";
+import {format} from 'date-fns';
 
 const DashboardPage = observer(() => {
     const {rowsStore, modalsStore} = useContext(Context);
@@ -11,37 +12,32 @@ const DashboardPage = observer(() => {
     useEffect(() => {
         fetchRow().then(data => rowsStore.setRow(data))
     },[])
+    console.log(modalsStore.modal)
 
     return (
-        <div className={"dashboardWrapper"}>
+        <div className={styles.dashboardWrapper}>
             <ContentContainer>
-                <div className={"dashboardBtnWrapper"}>
-                    <div className={"dashboardBtn"} onClick={() => modalsStore.setModal(true)}>Add</div>
-                    {/*<div className={"dashboardBtn"} onClick={() => modalsStore.setModalType('EXCOMING')}>Excoming</div>*/}
+                <div className={styles.dashboardBtnWrapper}>
+                    <div className={styles.dashboardBtn} onClick={() => modalsStore.setModal(true)}>Add</div>
+                    {/*<div className={styles.dashboardBtn} onClick={() => modalsStore.setModalType('EXCOMING')}>Excoming</div>*/}
                 </div>
-                <div className={"tableWrapper"}>
-                    <table className={"dashboardTable"}>
+                <div className={styles.tableWrapper}>
+                    <table className={styles.dashboardTable}>
                         <tbody>
-                            <tr className={"dashboardTableTitles"}>
-                                <th className={"dashboardTableTitle"}>Date</th>
-                                <th className={"dashboardTableTitle"}>Name</th>
-                                <th className={"dashboardTableTitle"}>Description</th>
-                                <th className={"dashboardTableTitle"}>Number</th>
+                            <tr className={styles.dashboardTableTitles}>
+                                <th className={styles.dashboardTableTitle}>Date</th>
+                                <th className={styles.dashboardTableTitle}>Name</th>
+                                <th className={styles.dashboardTableTitle}>Description</th>
+                                <th className={styles.dashboardTableTitle}>Number</th>
                             </tr>
                             {rowsStore.row.map(r =>
-                                <tr className={r.type === 'INCOMING' && 'dashboardTableRowWrapper' || r.type === 'EXCOMING' && 'dashboardTableRowWrapperRed'} key={r.id}>
-                                    <td className={"dashboardTableRow"}>{r.createdAt}</td>
-                                    <td className={"dashboardTableRow"}>{r.name}</td>
-                                    <td className={"dashboardTableRow"}>{r.description}</td>
-                                    <td className={"dashboardTableRow"}>{r.number}</td>
+                                <tr className={r.type === 'INCOMING' && styles.dashboardTableRowWrapper || r.type === 'EXCOMING' && styles.dashboardTableRowWrapperRed} key={r.id}>
+                                    <td className={styles.dashboardTableRow}>{format(new Date(r.createdAt), 'LLLL d, yyyy')}</td>
+                                    <td className={styles.dashboardTableRow}>{r.name}</td>
+                                    <td className={styles.dashboardTableRow}>{r.description}</td>
+                                    <td className={styles.dashboardTableRow}>{r.number}</td>
                                 </tr>
                             )}
-                            {/*<tr className={`${"dashboardTableRowWrapper"} ${"dashboardTableRowWrapperRed"}`}>*/}
-                            {/*    <td className={"dashboardTableRow"}>24/03/2022</td>*/}
-                            {/*    <td className={"dashboardTableRow"}>Food</td>*/}
-                            {/*    <td className={"dashboardTableRow"}>Food etc.</td>*/}
-                            {/*    <td className={"dashboardTableRow"}>200</td>*/}
-                            {/*</tr>*/}
                         </tbody>
                     </table>
                 </div>

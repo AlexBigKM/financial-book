@@ -4,9 +4,10 @@ const ApiError = require('../error/ApiError')
 class RowController {
     async create (req, res, next) {
         const {name, type, description, number} = req.body
+        console.log(req.body)
         try {
-            const type = await Row.create({name, type, description, number})
-            return  res.json(type)
+            const row = await Row.create({name, type, description, number})
+            return  res.json(row)
         } catch (e) {
             next(ApiError.badRequest(e.message))
         }

@@ -3,7 +3,7 @@ import {NavLink, useLocation} from "react-router-dom";
 import ContentContainer from "../ContentContainer/ContentContainer";
 import {DASHBOARD_ROUTE, HOMEPAGE_ROUTE, LOGIN_ROUTE, REGISTRATION_ROUTE} from "../../utils/consts";
 import {Context} from "../../index";
-import "./NavBar.css";
+import styles from "./NavBar.css";
 import {observer} from "mobx-react-lite";
 
 const NavBar = observer(() => {
@@ -20,36 +20,25 @@ const NavBar = observer(() => {
     function renderNavBar() {
         switch (location.pathname) {
             case LOGIN_ROUTE:
-                return <NavLink className={"navBar"} to={HOMEPAGE_ROUTE}>Back</NavLink>
+                return <NavLink className={styles.navBar} to={HOMEPAGE_ROUTE}>Back</NavLink>
                 break;
-            case REGISTRATION_ROUTE:
-                return <NavLink className={"navBar"} to={HOMEPAGE_ROUTE}>Back</NavLink>
-                break;
-            case DASHBOARD_ROUTE:
-                return <NavLink className={"navBar"} to={HOMEPAGE_ROUTE}>Exit</NavLink>
-                break;
-            default:
-                return <NavLink className={"navBar"} to={LOGIN_ROUTE}>Login</NavLink>
+            case HOMEPAGE_ROUTE:
+                return <NavLink className={styles.navBar} to={LOGIN_ROUTE}>Login</NavLink>
         }
     }
 
     return (
-        <div className={"navBarWrapper"}>
+        <div className={styles.navBarWrapper}>
             <ContentContainer>
                 {user.isAuth ?
                     <>
-                        <NavLink className={"navBar"} to={HOMEPAGE_ROUTE}>Home</NavLink>
-                        <NavLink className={"navBar"} to={DASHBOARD_ROUTE}>Dashboard</NavLink>
-                        <NavLink className={"navBar"} to={HOMEPAGE_ROUTE} onClick={() => logOut()}>Exit</NavLink>
+                        <NavLink className={styles.navBar} to={HOMEPAGE_ROUTE}>Home</NavLink>
+                        <NavLink className={styles.navBar} to={DASHBOARD_ROUTE}>Dashboard</NavLink>
+                        <NavLink className={styles.navBar} to={HOMEPAGE_ROUTE} onClick={() => logOut()}>Exit</NavLink>
                     </> :
-                        <NavLink className={"navBar"} to={LOGIN_ROUTE}>Login</NavLink>
+                    // <NavLink className={styles.navBar} to={LOGIN_ROUTE}>Login</NavLink>
+                    renderNavBar()
                 }
-                {/*{renderNavBar()}*/}
-                {/*{!matchUrl ?*/}
-                {/*    <NavLink className={"navBar"} to={LOGIN_ROUTE}>Login</NavLink>*/}
-                {/*    :*/}
-                {/*    <NavLink className={"navBar"} to={HOMEPAGE_ROUTE}>Back</NavLink>*/}
-                {/*}*/}
             </ContentContainer>
         </div>
     );

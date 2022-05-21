@@ -3,7 +3,7 @@
 .homeBackground {
     height: 100vh;
     position: relative;
-    background-color: #212121;
+    background-color: #E7EAFF;
     overflow-x: hidden;
     overflow-y: hidden;
 }
@@ -12,23 +12,25 @@
     position: relative;
 }
 .homeCircle {
-    background-color: white;
     border-radius: 50%;
     position: absolute;
 }
 .homeCircle:nth-child(1) {
+    background-color: #62CD4D;
     height: 202px;
     width: 202px;
     top: 131px;
     right: 390px;
 }
 .homeCircle:nth-child(2) {
+    background-color: #FFDC00;
     height: 290px;
     width: 290px;
     top: 103px;
     right: 0;
 }
 .homeCircle:nth-child(3) {
+    background-color: #7CC1F8;
     height: 501px;
     width: 501px;
     bottom: -240px;
@@ -90,7 +92,7 @@
     font-weight: 400;
     font-size: 72px;
     line-height: 84px;
-    color: #FFFFFF;
+    color: #000000;
     text-transform: uppercase;
 }
 .homeLineWrapper {
@@ -102,7 +104,7 @@
     position: absolute;
     width: 50%;
     height: 1px;
-    background-color: #2196F3;
+    background-color: #000000;
     animation-duration: 1s;
     /*animation-iteration-count: infinite;*/
     animation-name: lineOne;
@@ -110,7 +112,7 @@
 .homeLine:nth-child(2) {
     width: 25%;
     top: 54px;
-    background-color: #FFC107;
+    background-color: #000000;
     animation-duration: 3s;
     animation-iteration-count: unset;
     animation-name: lineTwo;

@@ -1,10 +1,10 @@
 import React from 'react';
 import classNames from "classnames";
-import "./ContentContainer.css";
+import styles from "./ContentContainer.css";
 
 const ContentContainer = ({containerClassName, children}) => {
     return (
-        <div className={`container ${containerClassName}`}>
+        <div className={classNames(styles.container, containerClassName)}>
             {children}
         </div>
     );

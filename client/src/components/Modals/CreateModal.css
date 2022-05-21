@@ -2,15 +2,15 @@
     width: 100vw;
     height: 100vh;
     position: fixed;
-    background-color: rgba(155, 67, 244, 0.89);
+    background-color: rgba(113, 159, 250, 0.86);
     top: 0;
     left: 0;
-    display: none;
+    display: flex;
     align-items: center;
     justify-content: center;
     transition: all 0.5s;
     opacity: 0;
-    z-index: 9999;
+    /*z-index: 9999;*/
 }
 .showModal {
     opacity: 1;
