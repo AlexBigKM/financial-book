@@ -2,7 +2,7 @@ import React, {useContext, useEffect, useState} from 'react';
 import {BrowserRouter as Router} from "react-router-dom";
 import AppRouter from "./components/AppRouter/AppRouter";
 import NavBar from "./components/NavBar/NavBar";
-// import CreateModal from "./components/Modals/CreateModal";
+import CreateModal from "./components/Modals/CreateModal";
 import {observer} from "mobx-react-lite";
 // import './App.css';
 import {Context} from "./index";
@@ -27,7 +27,7 @@ const App = observer(() => {
 
     return (
         <Router>
-            {/*<CreateModal/>*/}
+            <CreateModal/>
             <NavBar/>
             <AppRouter/>
         </Router>

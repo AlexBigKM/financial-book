@@ -1,12 +1,14 @@
+@import "../../css/global.css";
+
 .dashboardWrapper {
     height: 100vh;
     position: relative;
     background-color: #E7EAFF;
     padding: 80px 0 20px;
 }
-.dashboardBtnWrapper {
+/*.dashboardBtnWrapper {*/
 
-}
+/*}*/
 .dashboardBtn {
     padding: 16px 0;
     text-transform: uppercase;

@@ -2,9 +2,10 @@ import React, {useContext, useEffect} from 'react';
 import ContentContainer from "../../components/ContentContainer/ContentContainer";
 import {observer} from "mobx-react-lite";
 import {Context} from "../../index";
-import styles from './DashboardPage.css';
 import {fetchRow} from "../../http/rowsApi";
 import {format} from 'date-fns';
+
+import styles from './DashboardPage.css';
 
 const DashboardPage = observer(() => {
     const {rowsStore, modalsStore} = useContext(Context);
@@ -12,7 +13,6 @@ const DashboardPage = observer(() => {
     useEffect(() => {
         fetchRow().then(data => rowsStore.setRow(data))
     },[])
-    console.log(modalsStore.modal)
 
     return (
         <div className={styles.dashboardWrapper}>
